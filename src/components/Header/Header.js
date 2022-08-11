@@ -4,7 +4,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ytlogo from "../../assets/youtube.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import VideoCallOutlinedIcon from "@mui/icons-material/VideoCallOutlined";
 import { Link } from "react-router-dom";
 import Avatar from "react-avatar";
@@ -30,7 +29,6 @@ const Header = () => {
       <div className="header_right">
         <VideoCallOutlinedIcon className="header_icon" />
         <NotificationsNoneSharpIcon className="header_icon" />
-        <AccountCircleOutlinedIcon className="header_icon" />
         <Avatar
           src="https://avatars.githubusercontent.com/u/100214144?v=4"
           round={true}

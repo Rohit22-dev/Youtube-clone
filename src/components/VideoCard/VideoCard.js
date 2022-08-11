@@ -1,5 +1,7 @@
 import React from "react";
 import "./VideoCard.css";
+import Avatar from "react-avatar";
+import millify from "millify";
 
 const VideoCard = ({
   title,
@@ -9,6 +11,13 @@ const VideoCard = ({
   timestamp,
   channelImage,
 }) => {
+  var milli = millify(
+    { views },
+    {
+      precision: 2,
+      lowercase: false,
+    }
+  );
   return (
     <div className="videocard">
       <img className="videocard_image" src={image} alt="" />
@@ -18,7 +27,7 @@ const VideoCard = ({
           <h4>{title}</h4>
           <p>{channel}</p>
           <p>
-            {views} views • {timestamp}
+            {milli} views • {timestamp}
           </p>
         </div>
       </div>

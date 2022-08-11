@@ -24,13 +24,14 @@
 }
 
 .videocard_text > p {
-  font-size: 14px;
-  color: gray;
+  font-size: 12px;
+  color: #2c2c2c;
 }
 
 .videocard_avatar {
   height: 30px !important;
   width: 30px !important;
+  border-radius: 50%;
 }
 
 .videocard_text > * {

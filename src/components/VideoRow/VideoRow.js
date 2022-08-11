@@ -1,5 +1,5 @@
 import React from "react";
-import "./VideoRow,css";
+import "./VideoRow.css";
 
 const VideoRow = ({ views, description, timestamp, channel, title, image }) => {
   return (

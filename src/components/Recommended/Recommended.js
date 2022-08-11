@@ -43,7 +43,7 @@ const RecommendedVideos = () => {
       const timestamp = DateTime.fromISO(snippet.publishedAt).toRelative();
       const channel = snippet.channelTitle;
 
-      new videoCards.push({
+      newVideoCards.push({
         videoId,
         image,
         title,
@@ -66,20 +66,25 @@ const RecommendedVideos = () => {
   }
 
   return (
-    <div className="recommededvideos_videos">
-      {videoCards.map((item) => {
-        return (
-          <VideoCard
-            key={item.videoId}
-            title={item.title}
-            image={item.image}
-            views={item.views}
-            timestamp={item.timestamp}
-            channel={item.channel}
-            channelImage={item.channelImage}
-          />
-        );
-      })}
+    <div className="recommendedvideos">
+      {isLoading ? (
+        <AiOutlineLoading3Quarters className="loading" color="secondary" />
+      ) : null}
+      <div className="recommendedvideos_videos">
+        {videoCards.map((item) => {
+          return (
+            <VideoCard
+              key={item.videoId}
+              title={item.title}
+              image={item.image}
+              views={item.views}
+              timestamp={item.timestamp}
+              channel={item.channel}
+              channelImage={item.channelImage}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
