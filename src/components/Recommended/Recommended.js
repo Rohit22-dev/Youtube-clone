@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Recommended.css";
 import VideoCard from "../VideoCard/VideoCard";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { DateTime } from "luxon";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
@@ -73,15 +74,17 @@ const RecommendedVideos = () => {
       <div className="recommendedvideos_videos">
         {videoCards.map((item) => {
           return (
-            <VideoCard
-              key={item.videoId}
-              title={item.title}
-              image={item.image}
-              views={item.views}
-              timestamp={item.timestamp}
-              channel={item.channel}
-              channelImage={item.channelImage}
-            />
+            <Link key={item.videoId} to={`/video/${item.videoId}`}>
+              <VideoCard
+                key={item.videoId}
+                title={item.title}
+                image={item.image}
+                views={item.views}
+                timestamp={item.timestamp}
+                channel={item.channel}
+                channelImage={item.channelImage}
+              />
+            </Link>
           );
         })}
       </div>

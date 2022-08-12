@@ -45,7 +45,16 @@
 }
 
 .header_center > input {
-  flex: 1;
+  flex: 0.2;
   border: none;
   outline: none;
+}
+
+@media screen and (max-width: 480px) {
+  .header_center {
+    width: 20%;
+  }
+  .header_searchbutton {
+    width: 20px;
+  }
 }

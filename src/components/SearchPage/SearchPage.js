@@ -3,6 +3,7 @@ import "./SearchPage.css";
 import ChannelRow from "./../ChannelRow/ChannelRow";
 import VideoRow from "./../VideoRow/VideoRow";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { DateTime } from "luxon";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
@@ -94,9 +95,7 @@ const SearchPage = (props) => {
   };
 
   if (isError) {
-    <ErrorOutlineOutlinedIcon className="loading">
-      No Results found!
-    </ErrorOutlineOutlinedIcon>;
+    <ErrorOutlineOutlinedIcon className="loading">No Results found!</ErrorOutlineOutlinedIcon>;
   }
   return (
     <div className="searchpage">
@@ -110,7 +109,7 @@ const SearchPage = (props) => {
       <hr />
       {!isLoading ? (
         <ChannelRow
-          ey={channelRow.channelId}
+          key={channelRow.channelId}
           image={channelRow.image}
           channel={channelRow.title}
           subs={channelRow.subs}
@@ -121,14 +120,16 @@ const SearchPage = (props) => {
       <hr />
       {videoRows.map((item) => {
         return (
-          <VideoRow
-            title={item.title}
-            image={item.image}
-            views={item.views}
-            timestamp={item.timestamp}
-            channel={item.channel}
-            description={item.description}
-          />
+          <Link key={item.videoId} to={`/video/${item.videoId}`}>
+            <VideoRow
+              title={item.title}
+              image={item.image}
+              views={item.views}
+              timestamp={item.timestamp}
+              channel={item.channel}
+              description={item.description}
+            />
+          </Link>
         );
       })}
     </div>

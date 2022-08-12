@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import ytlogo from "../../assets/youtube.svg";
@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Avatar from "react-avatar";
 
 const Header = () => {
+  const [inputSearch, setInputSearch] = useState("");
   return (
     <div className="header">
       {/* left side */}
@@ -21,8 +22,14 @@ const Header = () => {
 
       {/* center */}
       <div className="header_center">
-        <input type="text" />
-        <SearchIcon className="header_searchbutton" />
+        <input
+          type="text"
+          onChange={(e) => setInputSearch(e.target.value)}
+          value={inputSearch}
+        />
+        <Link to={`/search/${inputSearch}`}>
+          <SearchIcon className="header_searchbutton" />
+        </Link>
       </div>
 
       {/* right side */}

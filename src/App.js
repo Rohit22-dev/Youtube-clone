@@ -36,7 +36,7 @@ const App = () => {
               </>
             }
           />
-          
+
           <Route
             path="/video/:videoId"
             element={

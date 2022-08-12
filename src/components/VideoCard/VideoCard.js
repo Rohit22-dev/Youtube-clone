@@ -11,10 +11,10 @@ const VideoCard = ({
   timestamp,
   channelImage,
 }) => {
-  var milli = millify(
+  let milli = millify(
     { views },
     {
-      precision: 2,
+      precision: 1,
       lowercase: false,
     }
   );
