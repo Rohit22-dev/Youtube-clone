@@ -55,8 +55,19 @@
 @media screen and (max-width: 480px) {
   .header_center {
     width: 20%;
+    flex: 1;
   }
   .header_searchbutton {
     width: 20px;
+  }
+  .header {
+    gap: 30px;
+    width: 24rem;
+  }
+  .header_icon {
+    display: none !important;
+  }
+  .header_logo {
+    padding-top: 10px;
   }
 }

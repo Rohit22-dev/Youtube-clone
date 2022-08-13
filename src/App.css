@@ -2,6 +2,14 @@
   display: flex;
 }
 
+.app_mainpage > :nth-child(2) {
+  flex-grow: 6;
+}
+
+.app_mainpage > :nth-child(1) {
+  flex-grow: 1;
+}
+
 a {
   text-decoration: inherit;
   color: inherit;

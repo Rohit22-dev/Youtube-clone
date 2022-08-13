@@ -32,3 +32,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .loading {
+    margin-right: -5px;
+  }
+}
